@@ -166,7 +166,27 @@ WHERE id <= 10;
 -- There is NO UNDO!!!
 UPDATE `employees_tmp`
 SET `salary` = `salary` * 1.10
-WHERE id <= 10;
+WHERE `id` <= 10;
 
+SELECT * 
+FROM employees
+WHERE job_title = 'Manager';
 
+UPDATE employees
+SET salary = salary + 100
+WHERE job_title = 'Manager';
+
+SELECT salary
+FROM employees;
+
+SELECT *
+FROM employees
+WHERE department_id IN (1, 2);
+
+DELETE FROM employees
+WHERE department_id IN (1, 2);
+
+SELECT *
+FROM employees
+ORDER BY id;
 
